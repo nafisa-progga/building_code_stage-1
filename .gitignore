@@ -1,0 +1,51 @@
+# ── API Keys & Secrets ────────────────────────────────────────
+.env
+.env.local
+.env.production
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# ── Virtual Environments ──────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Datalab Raw Cache (large files, costs money to regenerate) ─
+storage/raw_*.json
+
+# ── Structured Output (regenerate with: python main.py) ───────
+storage/output/structured_document.json
+
+# ── Extracted Figures (regenerate with: python main.py) ───────
+storage/figures/
+
+# ── QA Flags (reviewer data, optional to commit) ─────────────
+storage/output/flagged_issues.json
+
+# ── IDEs & Editors ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Jupyter (if used for testing) ────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Build / Dist ──────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
