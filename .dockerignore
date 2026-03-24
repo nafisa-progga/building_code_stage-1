@@ -1,0 +1,38 @@
+# ── Secrets ───────────────────────────────────────────────────
+.env
+.env.local
+
+# ── Python cache ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.Python
+
+# ── Virtual environments ──────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Git ───────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── IDEs ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Docs (not needed inside container) ───────────────────────
+docs/
+README.md
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Large raw cache (should be regenerated or volume-mounted) ─
+storage/raw_*.json

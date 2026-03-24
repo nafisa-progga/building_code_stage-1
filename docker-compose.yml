@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────
+#  docker-compose.yml
+#  Usage:
+#    docker compose up -d          # start
+#    docker compose down           # stop
+#    docker compose logs -f        # watch logs
+#    docker compose restart        # restart
+# ─────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  buildingcode:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: buildingcode-app
+
+    restart: unless-stopped
+
+    # ── Environment variables (from .env file) ────────────────
+    env_file:
+      - .env
+
+    # ── Port mapping ──────────────────────────────────────────
+    # Format: "HOST_PORT:CONTAINER_PORT"
+    # Based on your server: HTTP port is 9901
+    # Client accesses via: http://103.174.189.183:9901
+    ports:
+      - "9901:8501"    # Streamlit viewer  → public port 9901
+      - "9910:8000"    # FastAPI REST API  → internal port 9910
+
+    # ── Persistent storage ────────────────────────────────────
+    # Maps local folders into the container so data survives restarts
+    volumes:
+      - ./storage/output:/app/storage/output
+      - ./storage/figures:/app/storage/figures
+      - ./storage:/app/storage
+
+    # ── Health check ─────────────────────────────────────────
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+    # ── Resource limits (optional, prevents runaway usage) ────
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 256M
