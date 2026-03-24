@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: buildingcode-viewer
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATALAB_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+    healthCheckPath: /_stcore/health

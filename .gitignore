@@ -15,19 +15,10 @@ __pycache__/
 .venv/
 venv/
 env/
+myenv/
 ENV/
 
-# ── Datalab Raw Cache (large files, costs money to regenerate) ─
-storage/raw_*.json
 
-# ── Structured Output (regenerate with: python main.py) ───────
-storage/output/structured_document.json
-
-# ── Extracted Figures (regenerate with: python main.py) ───────
-storage/figures/
-
-# ── QA Flags (reviewer data, optional to commit) ─────────────
-storage/output/flagged_issues.json
 
 # ── IDEs & Editors ────────────────────────────────────────────
 .vscode/
