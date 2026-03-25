@@ -197,3 +197,10 @@ The **British Columbia Building Code (BCBC) Part 4** was used as the primary dev
 - The Streamlit viewer reads the JSON directly — no API server is required to run it.
 - The FastAPI server is optional and provided for programmatic / headless access.
 
+---
+
+## Documentation
+
+For full technical documentation including data model, parser internals, and configuration details see **[GUIDE.md](GUIDE.md)**.
+
+For developer/AI-assistant context see **[CLAUDE.md](CLAUDE.md)**.
