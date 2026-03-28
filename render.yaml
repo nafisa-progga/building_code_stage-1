@@ -1,0 +1,42 @@
+# ── API Keys & Secrets ────────────────────────────────────────
+.env
+.env.local
+.env.production
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# ── Virtual Environments ──────────────────────────────────────
+.venv/
+venv/
+env/
+myenv/
+ENV/
+
+
+
+# ── IDEs & Editors ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Jupyter (if used for testing) ────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Build / Dist ──────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
