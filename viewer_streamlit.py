@@ -37,14 +37,14 @@ STRUCTURED_DOC_PATH = Path("storage/output/structured_document.json")
 FLAGS_PATH          = Path("storage/output/flagged_issues.json")
 #FIGURES_DIR         = Path("storage/figures")
 
-
 import os
 from pathlib import Path
 
-# Get the absolute path to the directory this script is in
-BASE_DIR = Path(__file__).resolve().parent
+# In Docker, your WORKDIR is likely /app
+# Use an environment variable or a fallback to /app
+BASE_DIR = Path(os.getenv("APP_HOME", "/app"))
 
-# Define the figures directory accurately
+# Define figures directory
 FIGURES_DIR = BASE_DIR / "storage" / "figures"
 
 # ─────────────────────────────────────────────────────────────────────────────
