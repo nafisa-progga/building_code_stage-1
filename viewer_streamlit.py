@@ -35,17 +35,8 @@ st.set_page_config(
 # ─────────────────────────────────────────────────────────────────────────────
 STRUCTURED_DOC_PATH = Path("storage/output/structured_document.json")
 FLAGS_PATH          = Path("storage/output/flagged_issues.json")
-#FIGURES_DIR         = Path("storage/figures")
+FIGURES_DIR         = Path("storage/figures")
 
-import os
-from pathlib import Path
-
-# In Docker, your WORKDIR is likely /app
-# Use an environment variable or a fallback to /app
-BASE_DIR = Path(os.getenv("APP_HOME", "/app"))
-
-# Define figures directory
-FIGURES_DIR = BASE_DIR / "storage" / "figures"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Data loading
