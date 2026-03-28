@@ -109,4 +109,5 @@ if __name__ == "__main__":
         help="Enable Claude AI enhancement (uses Anthropic API credits)"
     )
     args = parser.parse_args()
+    #Unecessay comment for testing
     run_pipeline(args.pdf, force_extract=args.force_extract, use_ai_enhancement=args.ai)
